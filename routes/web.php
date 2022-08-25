@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UsersController;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,7 @@ Route::get('/helloworld/{name}/{email?}', function ($name, $email = null){
 })->name('ola');
 
 
+Route::get("/users", [UsersController::class, 'index']);
 Route::get("/products", [ProductController::class, 'index']);
 Route::get("/product/add/{produto}", [ProductController::class, 'addProduct']);
 Route::get("/request", [ClientController::class, 'store']);

@@ -50,4 +50,8 @@ class User extends Authenticatable
         return $this->hasMany(Address::class, "user_id");
     }
 
+    public function regras(){
+        return  $this->belongsToMany(Regra::class, "regra_users", "user_id" , "regra_id");
+    }
+
 }
